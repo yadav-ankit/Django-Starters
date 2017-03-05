@@ -1,20 +1,49 @@
 {% extends "base.html" %}
-{% block title %}Welcome to Django{% endblock %}
-{% block head %}Welcome to Django{% endblock %}
+{% block title %}Edit Your Profile{% endblock %}
+{% block head %}Edit Your Profile{% endblock %}
+
+
 {% block content %}
 
-    {% for c in form %}
-     {{ c.error }}
+    <style>
+.temp123
+{
+margin: 0 auto;
+margin-left: auto;
+margin-right: auto;
+text-align:center;
+}
 
-    {% endfor %}
+    label {
+    width: 110px;
+    height: 40px;
+}
 
-    <form  method="post" >
-    {% csrf_token %}
-    {{ form.as_ul }}
+    h1 {
+    font-size: 27px;
+        text-align: center;
+}
 
-    <input type="submit" value="Update"  />
+</style>
+
+
+
+
+
+
+    <form method="post" >{% csrf_token %}
+       <div border="0">
+           <tr><th> <div class ="temp123">  <label>College:</label></th><td><input type="text" {{ form.college }} </td></tr> </div>
+           <tr><th> <div class ="temp123">  <label>Branch:</label></th><td><input type="text" {{ form.branch }} </td></tr> </div>
+           <tr><th> <div class ="temp123">  <label>Skills:</label></th><td><input type="text" {{ form.skills }} </td></tr> </div>
+        </table>
+    </form>
+    <br/>
+        <div class ="temp123">    <input type="submit" value="Update" />  </div>
+        <input type="hidden" name="next" value="/home" />
 
     </form>
-
-
 {% endblock %}
+
+
+
