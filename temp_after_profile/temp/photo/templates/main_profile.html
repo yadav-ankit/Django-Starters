@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}Welcome to Django{% endblock %}
+{% block content %}
+
+
+    {% for c in form %}
+     {{ c.error }}
+
+    {% endfor %}
+
+    <form  method="post" >
+    {% csrf_token %}
+    {{ forms.as_ul }}
+
+    <input type="submit" value="Update"  />
+
+    </form>
+
+
+{% endblock %}
