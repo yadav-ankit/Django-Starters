@@ -1,1 +1,1 @@
-# Django-Temp
+# Django-Temporary
